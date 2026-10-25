@@ -5,22 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Выбор даты и времени</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
   </head>
+
+
   <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
-
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
-
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
-
     <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
+      <header class="header">
+        <div class="logo">
+          <span class="logo-header">✄ ШАРМ ✄</span>
+        </div>
+        <nav class="links">
+          <div class="nav-item">
+            <a href="#">Услуги</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Галерея</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Команда</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Отзывы</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Контакты</a>
+          </div>
+        </nav>
+      </header>
+
+
+      <main class="main">
+        <div class="stages">
+          <div class="stage">
+            <span class="number-stage">1</span>
+            <span>Мастер</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-stage">2</span>
+            <span>Услуга</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-active-stage">3</span>
+            <span class="name-active-stage">Дата и время</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-stage">4</span>
+            <span>Контакты</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-stage">5</span>
+            <span>Подтверждение</span>
+          </div>
+        </div>
+        <div class="working-area">
+          <div class="info">
+            <div class="first-wa">
+              <a href="#" class="button-link">
+                <button class="system-button">← Выбор услуги</button>
+              </a>
+              <p class="header-wa">Выберите дату и время записи</p>
+            </div>
+            <div class="second-wa">
+              <div class="calendar">
+                <div class="calendar-header">
+                  <p class="name-month">Ноябрь 2026</p>
+                  <div class="month-buttons">
+                    <button class="button-arrow">⯇</button>
+                    <button class="button-arrow">⯈</button>
+                  </div>
+                </div>
+                <div class="name-days">
+                  <p class="day">Пн</p>
+                  <p class="day">Вт</p>
+                  <p class="day">Ср</p>
+                  <p class="day">Чт</p>
+                  <p class="day">Пт</p>
+                  <p class="day weekend">Сб</p>
+                  <p class="day weekend">Вс</p>
+                </div>
+                <div class="weeks">
+                  <div class="week">
+                    <button class="selected-day">2</button>
+                    <button class="active-day">3</button>
+                    <button class="inactive-day">4</button>
+                    <button class="active-day">5</button>
+                    <button class="active-day">6</button>
+                    <button class="active-day">7</button>
+                    <button class="active-day">8</button>
+                  </div>
+                  <div class="week">
+                    <button class="active-day">9</button>
+                    <button class="active-day">10</button>
+                    <button class="active-day">11</button>
+                    <button class="active-day">12</button>
+                    <button class="active-day">13</button>
+                    <button class="active-day">14</button>
+                    <button class="active-day">15</button>
+                  </div>
+                  <div class="week">
+                    <button class="active-day">16</button>
+                    <button class="active-day">17</button>
+                    <button class="active-day">18</button>
+                    <button class="active-day">19</button>
+                    <button class="active-day">20</button>
+                    <button class="active-day">21</button>
+                    <button class="active-day">22</button>
+                  </div>
+                  <div class="week">
+                    <button class="active-day">23</button>
+                    <button class="active-day">24</button>
+                    <button class="active-day">25</button>
+                    <button class="active-day">26</button>
+                    <button class="active-day">27</button>
+                    <button class="active-day">28</button>
+                    <button class="active-day">29</button>
+                  </div>
+                  <div class="week">
+                    <button class="active-day">30</button>
+                    <button class="inactive-day">1</button>
+                    <button class="inactive-day">2</button>
+                    <button class="inactive-day">3</button>
+                    <button class="inactive-day">4</button>
+                    <button class="inactive-day">5</button>
+                    <button class="inactive-day">6</button>
+                  </div>
+                </div>
+              </div>
+              <div class="time">
+                <p class="header-time">Доступное время</p>
+                <div class="lines-time">
+                  <div class="line-time">
+                    <button class="inactive-time">10:00</button>
+                    <button class="selected-time">11:00</button>
+                  </div>
+                  <div class="line-time">
+                    <button class="active-time">12:00</button>
+                    <button class="inactive-time">13:00</button>
+                  </div>
+                  <div class="line-time">
+                    <button class="active-time">14:00</button>
+                    <button class="inactive-time">15:00</button>
+                  </div>
+                  <div class="line-time">
+                    <button class="active-time">16:00</button>
+                    <button class="active-time">17:00</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="third-wa">
+              <div class="date-time">
+                <p><span class="header-date-time">Дата: </span>2 ноября 2026</p>
+                <p><span class="header-date-time">Время: </span>11:00</p>
+              </div>
+              <a href="#" class="button-link">
+                <button class="system-button">Продолжить</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-top-left">
+            <span class="logo-footer">✄ ШАРМ ✄</span>
+            <p class="text-description">Команда мастеров парикмахерской "Шарм" более 10 лет создаёт стрижки, которые хочется носить.</p>
+          </div>
+          <div class="footer-top-middle">
+            <p class="header-footer-coloumn">Контакты</p>
+            <div class="contacts">
+              <a href="#" class="address">⚲ ул. Садовая, 15, Москва</a>
+              <a href="#" class="phone">✆ +7 (495) 123-45-67</a>
+            </div>
+          </div>
+          <div class="footer-top-right">
+            <p class="header-footer-coloumn">Режим работы</p>
+            <div class="operating-hours">
+              <p>Пн–Пт: 9:00–21:00</p>
+              <P>Сб–Вс: 10:00–19:00</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-bottom-left">© 2026. Все права защищены.</p>
+          <a href="#" class="footer-bottom-right">Политика конфиденциальности</a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
