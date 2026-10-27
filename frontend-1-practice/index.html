@@ -73,15 +73,13 @@
         <div class="working-area">
           <div class="info">
             <div class="first-wa">
-              <a href="#" class="button-link">
-                <button class="system-button">← Выбор услуги</button>
-              </a>
-              <p class="header-wa">Выберите дату и время записи</p>
+              <button class="system-button">← Выбор услуги</button>
+              <h1 class="header-wa">Выберите дату и время записи</h1>
             </div>
             <div class="second-wa">
               <div class="calendar">
                 <div class="calendar-header">
-                  <p class="name-month">Ноябрь 2026</p>
+                  <h2 class="name-month">Ноябрь 2026</h2>
                   <div class="month-buttons">
                     <button class="button-arrow">⯇</button>
                     <button class="button-arrow">⯈</button>
@@ -98,70 +96,79 @@
                 </div>
                 <div class="weeks">
                   <div class="week">
-                    <button class="selected-day">2</button>
-                    <button class="active-day">3</button>
-                    <button class="inactive-day">4</button>
-                    <button class="active-day">5</button>
-                    <button class="active-day">6</button>
-                    <button class="active-day">7</button>
-                    <button class="active-day">8</button>
+                    <button class="button-day inactive-day" disabled>26</button>
+                    <button class="button-day inactive-day" disabled>27</button>
+                    <button class="button-day inactive-day" disabled>28</button>
+                    <button class="button-day inactive-day" disabled>29</button>
+                    <button class="button-day inactive-day" disabled>30</button>
+                    <button class="button-day inactive-day" disabled>31</button>
+                    <button class="button-day active-day">1</button>
                   </div>
                   <div class="week">
-                    <button class="active-day">9</button>
-                    <button class="active-day">10</button>
-                    <button class="active-day">11</button>
-                    <button class="active-day">12</button>
-                    <button class="active-day">13</button>
-                    <button class="active-day">14</button>
-                    <button class="active-day">15</button>
+                    <button class="button-day selected-day">2</button>
+                    <button class="button-day active-day">3</button>
+                    <button class="button-day inactive-day" disabled>4</button>
+                    <button class="button-day active-day">5</button>
+                    <button class="button-day active-day">6</button>
+                    <button class="button-day active-day">7</button>
+                    <button class="button-day active-day">8</button>
                   </div>
                   <div class="week">
-                    <button class="active-day">16</button>
-                    <button class="active-day">17</button>
-                    <button class="active-day">18</button>
-                    <button class="active-day">19</button>
-                    <button class="active-day">20</button>
-                    <button class="active-day">21</button>
-                    <button class="active-day">22</button>
+                    <button class="button-day active-day">9</button>
+                    <button class="button-day active-day">10</button>
+                    <button class="button-day active-day">11</button>
+                    <button class="button-day active-day">12</button>
+                    <button class="button-day active-day">13</button>
+                    <button class="button-day active-day">14</button>
+                    <button class="button-day active-day">15</button>
                   </div>
                   <div class="week">
-                    <button class="active-day">23</button>
-                    <button class="active-day">24</button>
-                    <button class="active-day">25</button>
-                    <button class="active-day">26</button>
-                    <button class="active-day">27</button>
-                    <button class="active-day">28</button>
-                    <button class="active-day">29</button>
+                    <button class="button-day active-day">16</button>
+                    <button class="button-day active-day">17</button>
+                    <button class="button-day active-day">18</button>
+                    <button class="button-day active-day">19</button>
+                    <button class="button-day active-day">20</button>
+                    <button class="button-day active-day">21</button>
+                    <button class="button-day active-day">22</button>
                   </div>
                   <div class="week">
-                    <button class="active-day">30</button>
-                    <button class="inactive-day">1</button>
-                    <button class="inactive-day">2</button>
-                    <button class="inactive-day">3</button>
-                    <button class="inactive-day">4</button>
-                    <button class="inactive-day">5</button>
-                    <button class="inactive-day">6</button>
+                    <button class="button-day active-day">23</button>
+                    <button class="button-day active-day">24</button>
+                    <button class="button-day active-day">25</button>
+                    <button class="button-day active-day">26</button>
+                    <button class="button-day active-day">27</button>
+                    <button class="button-day active-day">28</button>
+                    <button class="button-day active-day">29</button>
+                  </div>
+                  <div class="week">
+                    <button class="button-day active-day">30</button>
+                    <button class="button-day inactive-day" disabled>1</button>
+                    <button class="button-day inactive-day" disabled>2</button>
+                    <button class="button-day inactive-day" disabled>3</button>
+                    <button class="button-day inactive-day" disabled>4</button>
+                    <button class="button-day inactive-day" disabled>5</button>
+                    <button class="button-day inactive-day" disabled>6</button>
                   </div>
                 </div>
               </div>
               <div class="time">
-                <p class="header-time">Доступное время</p>
+                <h2 class="header-time">Доступное время</h2>
                 <div class="lines-time">
                   <div class="line-time">
-                    <button class="inactive-time">10:00</button>
-                    <button class="selected-time">11:00</button>
+                    <button class="button-time inactive-time" disabled>10:00</button>
+                    <button class="button-time selected-time">11:00</button>
                   </div>
                   <div class="line-time">
-                    <button class="active-time">12:00</button>
-                    <button class="inactive-time">13:00</button>
+                    <button class="button-time active-time">12:00</button>
+                    <button class="button-time inactive-time" disabled>13:00</button>
                   </div>
                   <div class="line-time">
-                    <button class="active-time">14:00</button>
-                    <button class="inactive-time">15:00</button>
+                    <button class="button-time active-time">14:00</button>
+                    <button class="button-time inactive-time" disabled>15:00</button>
                   </div>
                   <div class="line-time">
-                    <button class="active-time">16:00</button>
-                    <button class="active-time">17:00</button>
+                    <button class="button-time active-time">16:00</button>
+                    <button class="button-time active-time">17:00</button>
                   </div>
                 </div>
               </div>
@@ -171,9 +178,7 @@
                 <p><span class="header-date-time">Дата: </span>2 ноября 2026</p>
                 <p><span class="header-date-time">Время: </span>11:00</p>
               </div>
-              <a href="#" class="button-link">
-                <button class="system-button">Продолжить</button>
-              </a>
+              <button class="system-button">Продолжить</button>
             </div>
           </div>
         </div>
@@ -197,7 +202,7 @@
             <p class="header-footer-coloumn">Режим работы</p>
             <div class="operating-hours">
               <p>Пн–Пт: 9:00–21:00</p>
-              <P>Сб–Вс: 10:00–19:00</p>
+              <p>Сб–Вс: 10:00–19:00</p>
             </div>
           </div>
         </div>

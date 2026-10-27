@@ -7,13 +7,16 @@
 body {
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
-  background-color: #3A2E28;
-  display: inline-block; 
-  min-width: 100%;
 }
 
 .page {
   min-height: 100vh;
+}
+
+h1, h2 {
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .header {
@@ -34,6 +37,8 @@ body {
 
 .links {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 24px;
 }
 
@@ -144,8 +149,9 @@ body {
   background-color: #965337;
 }
 
-.button-link{
-  text-decoration: none;
+.system-button:focus-visible, .active-day:focus-visible, .selected-day:focus-visible, .button-arrow:focus-visible, .active-time:focus-visible, .selected-time:focus-visible {
+  outline: 3px solid #6B7F5E;
+  outline-offset: 2px;
 }
 
 .header-wa {
@@ -156,23 +162,22 @@ body {
 }
 
 .second-wa {
-  width: 967px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 32px;
 }
 
 .calendar{
-  height: 333px;
-  width: 555px;
   border-radius: 12px;
   background-color: #FFFFFF;
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1;
+  min-width: 0;
 }
 
 .calendar-header {
@@ -212,7 +217,6 @@ body {
 }
 
 .name-days {
-  width: 507px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -236,63 +240,52 @@ body {
 }
 
 .weeks {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .week {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
 }
 
-.inactive-day {
+.button-day {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 36px;
   width: 60px;
-  background-color: #FFFFFF;
-  border: 2px solid #FFFFFF;
-  cursor: not-allowed;
-  color: #7A6E64; 
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: bold;
 }
 
+.inactive-day {
+  background-color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  cursor: not-allowed;
+  color: #7A6E64; 
+
+}
+
 .active-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  width: 60px;
   background-color: #C96F4A;
   border-radius: 100px;
   border: 2px solid #C96F4A;
   cursor: pointer;
   color: #FFFFFF; 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: bold;
 }
 
 .selected-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 36px;
-  width: 60px;
   background-color: #6B7F5E;
   border-radius: 100px;
   border: 2px solid #6B7F5E;
+  cursor: pointer;
   color: #FFFFFF; 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: bold;
 }
 
 .time {
@@ -300,8 +293,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
-  height: 333px;
-  width: 380px;
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 24px;
@@ -309,10 +300,10 @@ body {
 }
 
 .lines-time {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .line-time {
@@ -328,55 +319,40 @@ body {
   font-weight: bold;
 }
 
-.inactive-time {
+.button-time {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 48px;
   width: 154px;
-  background-color: #FFB9B9;
-  border: 2px solid #FF0000;
   border-radius: 8px;
-  cursor: not-allowed;
-  color: #3A2E28; 
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: bold;
+}
+
+.inactive-time {
+  background-color: #FFB9B9;
+  border: 2px solid #FF0000;
+  cursor: not-allowed;
+  color: #3A2E28; 
 }
 
 .active-time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 48px;
-  width: 154px;
   background-color: #C96F4A;
   border: 2px solid #C96F4A;
-  border-radius: 8px;
   cursor: pointer;
   color: #FFFFFF; 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
 }
 
 .selected-time {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 48px;
-  width: 154px;
   background-color: #6B7F5E;
   border: 2px solid #6B7F5E;
-  border-radius: 8px;
   color: #FFFFFF; 
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
 }
 
 .third-wa {
-  width: 968px;
+  width: 922px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -504,5 +480,133 @@ body {
   color: #808585;
   font-size: 13px;
   flex-shrink: 0;
+}
 
+@media (max-width: 1024px) {
+  .stages {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 16px;
+    gap: 12px;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  .second-wa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .third-wa {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    gap: 25px;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stages > p {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    padding: 10px 14px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .first-wa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    white-space: normal;
+  }
+
+  .header-wa {
+    font-size: 32px;
+  }
+
+  .info, .second-wa {
+    gap: 17px;
+  }
+
+  .calendar {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .name-days {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px;
+    gap: 3px;
+  }
+
+  .week {
+    gap: 6px;
+  }
+
+  .button-day {
+    width: 33px;
+    height: 33px;
+    font-size: 13px;
+  }
+
+  .time {
+    padding: 12px;
+  }
+
+  .button-time {
+    width: 125px;
+    height: 40px;
+  }
+
+  .line-time {
+    gap: 12px;
+  }
+
+  .date-time {
+    width: 100%;
+    height: auto;
+  }
+
+  .third-wa {
+    gap: 25px;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 }
