@@ -5,10 +5,138 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Выбор даты и времени</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
   </head>
+
+
   <body>
     <div class="page">
-      <!-- Перенесите вашу верстку. Удалите статичные данные. Подключите скрипт -->
+      <header class="header">
+        <div class="logo">
+          <button class="logo-header">✄ ШАРМ ✄</button>
+        </div>
+        <nav class="links">
+          <div class="nav-item">
+            <a href="#">Услуги</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Галерея</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Команда</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Отзывы</a>
+          </div>
+          <div class="nav-item">
+            <a href="#">Контакты</a>
+          </div>
+        </nav>
+      </header>
+
+
+      <main class="main">
+        <div class="stages">
+          <div class="stage">
+            <span class="number-stage">1</span>
+            <span>Мастер</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-stage">2</span>
+            <span>Услуга</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-active-stage">3</span>
+            <span class="name-active-stage">Дата и время</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-stage">4</span>
+            <span>Контакты</span>
+          </div>
+          <p>|</p>
+          <div class="stage">
+            <span class="number-stage">5</span>
+            <span>Подтверждение</span>
+          </div>
+        </div>
+        <div class="working-area">
+          <div class="info">
+            <div class="first-wa">
+              <button class="system-button back-button">← Выбор услуги</button>
+              <h1 class="header-wa">Выберите дату и время записи</h1>
+            </div>
+            <div class="second-wa">
+              <div class="calendar">
+                <div class="calendar-header">
+                  <h2 class="name-month"></h2>
+                  <div class="month-buttons">
+                    <button class="button-arrow last-month">⯇</button>
+                    <button class="button-arrow next-month">⯈</button>
+                  </div>
+                </div>
+                <div class="name-days">
+                  <p class="day">Пн</p>
+                  <p class="day">Вт</p>
+                  <p class="day">Ср</p>
+                  <p class="day">Чт</p>
+                  <p class="day">Пт</p>
+                  <p class="day weekend">Сб</p>
+                  <p class="day weekend">Вс</p>
+                </div>
+                <div class="weeks"></div>
+              </div>
+              <div class="time">
+                <h2 class="header-time">Доступное время</h2>
+                <div class="lines-time"> </div>
+              </div>
+            </div>
+            <div class="third-wa">
+              <div class="date-time"></div>
+              <button class="system-button continue-button">Продолжить</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-top-left">
+            <span class="logo-footer">✄ ШАРМ ✄</span>
+            <p class="text-description">Команда мастеров парикмахерской "Шарм" более 10 лет создаёт стрижки, которые хочется носить.</p>
+          </div>
+          <div class="footer-top-middle">
+            <p class="header-footer-coloumn">Контакты</p>
+            <div class="contacts">
+              <a href="#" class="address">⚲ ул. Садовая, 15, Москва</a>
+              <a href="#" class="phone">✆ +7 (495) 123-45-67</a>
+            </div>
+          </div>
+          <div class="footer-top-right">
+            <p class="header-footer-coloumn">Режим работы</p>
+            <div class="operating-hours">
+              <p>Пн–Пт: 9:00–21:00</p>
+              <p>Сб–Вс: 9:30–20:00</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-bottom-left">© 2026. Все права защищены.</p>
+          <a href="#" class="footer-bottom-right">Политика конфиденциальности</a>
+        </div>
+      </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
