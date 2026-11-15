@@ -6,7 +6,7 @@
 //
 // Когда появится настоящий backend на Python — этот файл исчезнет,
 // а клиент продолжит обращаться к тем же URL (/api/...).
-import { database } from "./database.js";
+import { isActiveSlotToday, database } from "./database.js";
 
 // Задержка ответа, имитирует сеть.
 // 0    — отвечать мгновенно (удобно при разработке)
@@ -95,11 +95,29 @@ export default function apiMiddleware() {
               error: "Нужны параметры day, month, year",
             });
           }
+          
+          const isPast = (year < database.today.year) || 
+                        (year === database.today.year && month < database.today.month) || 
+                        (year === database.today.year && month === database.today.month && day < database.today.day);
+          const isToday = (year === database.today.year && month === database.today.month && day === database.today.day);
+          const isHoliday = database.holidays.some(h => h.d === day && h.m === (month + 1));
 
-          // Имитация: чётный день — один набор, нечётный — другой.
-          // Клиент этой логики не видит.
-          const isEven = day % 2 === 0;
-          const slots = isEven ? database.slotsEvenDay : database.slotsOddDay;
+          let slots;
+
+          if (isPast || isHoliday) {
+              //прошлое или праздник — отдаем слоты, где всё занято
+              slots = database.slotsOnHolidays;
+          } else {
+            if (isToday) {
+              //сегодня — обновляем слоты относительно времени
+              const times = ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"];
+              slots = times.map(time => ({ time: time, available: isActiveSlotToday(time) }));
+            } else {
+              //обычный день — отдаем по чётности
+              const isEven = day % 2 === 0;
+              slots = isEven ? database.slotsEvenDay : database.slotsOddDay;
+            }
+          }
 
           return sendJson(res, 200, {
             date: { day, month, year },

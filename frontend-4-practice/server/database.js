@@ -1,65 +1,70 @@
-// «База данных» — пока обычный JS-объект.
-//
-// Содержит только то, что нужно странице календаря:
-//   - today — «сегодня» по мнению сервера;
-//   - slotsEvenDay / slotsOddDay — два набора слотов,
-//     чтобы на клиенте было видно: при смене дня данные разные.
-//
-// Когда появится настоящий backend — этот файл исчезнет,
-// но структура данных сохранится.
-//
-// Правьте данные под свой проект. Ничего страшного, если
-// названия полей не совпадают с примером — сервер отдаст
-// то, что вы здесь напишете. Но клиент должен знать формат.
+export function isActiveSlotToday(time){
+  const now = new Date();
+  const bookHour = parseInt(time.substring(0, 2));
+  const bookMinute = parseInt(time.substring(3, 5));
+  const nowHour = now.getHours();
+  const nowMinute = now.getMinutes();
+  if (bookHour < nowHour)
+    return false;
+  else {
+    if (bookHour > nowHour)
+      return true;
+    else {
+      if (bookMinute <= nowMinute)
+        return false;
+      else
+        return true;
+    }
+  }
+}
+
 export const database = {
-    // «Сегодня» по мнению сервера.
-    // Календарь использует это, чтобы:
-    //   - понять, какой месяц показать при открытии;
-    //   - запретить выбор дней раньше этой даты;
-    //   - подсветить сегодняшний день.
-    //
-    // Формат: { day, month, year }. Месяц — 0-индексный (9 = октябрь).
-    // Меняйте на свой — например, поставьте реальную дату
-    // через new Date() или любую удобную для проверки.
-    today: { day: 17, month: 9, year: 2026 },
-  
-    // Слоты для чётных дней (2, 4, 6, ...).
-    // Каждый слот: { time: "10:00", available: true }.
-    //   time      — время в формате "HH:MM";
-    //   available — true, если слот свободен.
-    //
-    // Сервер сам решает, какой набор отдать — чётный или нечётный.
-    // Клиент этой логики не видит.
+    today: (() => {
+      const now = new Date();
+      return { day: now.getDate(), month: now.getMonth(), year: now.getFullYear() };
+    })(),
+    
     slotsEvenDay: [
       { time: "10:00", available: true },
-      { time: "10:30", available: true },
-      { time: "11:00", available: true },
-      { time: "11:30", available: true },
-      { time: "12:00", available: false },
-      { time: "13:00", available: false },
-      { time: "14:30", available: true },
-      { time: "15:00", available: true },
-      { time: "16:00", available: true },
-      { time: "17:30", available: true },
-      { time: "18:00", available: true },
-      { time: "19:30", available: true },
-    ],
-  
-    // Слоты для нечётных дней (1, 3, 5, ...).
-    // Здесь занятые слоты другие — чтобы при клике по дням
-    // пользователь видел, что данные действительно меняются.
-    slotsOddDay: [
-      { time: "10:00", available: true },
-      { time: "10:30", available: true },
       { time: "11:00", available: false },
-      { time: "11:30", available: true },
-      { time: "12:00", available: true },
+      { time: "12:00", available: false },
       { time: "13:00", available: true },
-      { time: "14:30", available: true },
+      { time: "14:00", available: true },
       { time: "15:00", available: true },
       { time: "16:00", available: false },
-      { time: "17:30", available: true },
+      { time: "17:00", available: true },
+      { time: "18:00", available: false },
+      { time: "19:00", available: true },
+    ],
+
+    slotsOddDay: [
+      { time: "10:00", available: true },
+      { time: "11:00", available: false },
+      { time: "12:00", available: false },
+      { time: "13:00", available: true },
+      { time: "14:00", available: true },
+      { time: "15:00", available: false },
+      { time: "16:00", available: true },
+      { time: "17:00", available: false },
       { time: "18:00", available: true },
-      { time: "19:30", available: true },
+      { time: "19:00", available: true },
+    ],
+
+    slotsOnHolidays: [
+      { time: "10:00", available: false },
+      { time: "11:00", available: false },
+      { time: "12:00", available: false },
+      { time: "13:00", available: false },
+      { time: "14:00", available: false },
+      { time: "15:00", available: false },
+      { time: "16:00", available: false },
+      { time: "17:00", available: false },
+      { time: "18:00", available: false },
+      { time: "19:00", available: false },
+    ],
+
+    holidays: [
+      {d: 1, m: 1}, {d: 2, m: 1}, {d: 3, m: 1}, {d: 4, m: 1}, {d: 5, m: 1}, {d: 6, m: 1}, {d: 7, m: 1}, {d: 8, m: 1},
+      {d: 23, m: 2}, {d: 8, m: 3}, {d: 1, m: 5}, {d: 9, m: 5}, {d: 12, m: 6}, {d: 4, m: 11}, {d: 31, m: 12}
     ],
   };
